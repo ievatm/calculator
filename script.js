@@ -44,3 +44,11 @@ function updateDisplay() {
     display.textContent = firstOperand || "0";
 }
 
+function clearCalculator() {
+    firstOperand = "";
+    secondOperand = "";
+    currentOperator = null;
+    shouldResetDisplay = false;
+    updateDisplay();
+}
+
