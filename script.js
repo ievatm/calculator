@@ -39,3 +39,8 @@ function operate (operator, num1, num2) {
             return null;
     }
 }
+
+function updateDisplay() {
+    display.textContent = firstOperand || "0";
+}
+
