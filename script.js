@@ -79,3 +79,18 @@ function calculate() {
         updateDisplay();
 }
 
+function backspace() {
+    firstOperand = firstOperand.slice(0, -1);
+    updateDisplay();
+}
+
+function appendDecimal() {
+    if(shouldResetDisplay) {
+        firstOperand ="0";
+        shouldResetDisplay = false;
+    }
+    if(!firstOperand.includes(".") {
+        firstOperand += ".";
+        updateDisplay();
+    })
+}
