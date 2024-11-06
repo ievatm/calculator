@@ -64,9 +64,18 @@ function appendNumber(number) {
 }
 
 function setOperator(operator) {
-    if(currentOperator !== null)
-        calculate();
+    if(currentOperator !== null) calculate();
     currentOperator = operator;
     secondOperand =firstOperand;
     firstOperand = "";
 }
+
+function calculate() {
+    if (currentOperator === null || firstOperand === "") return;
+        const result = operate(currentOperator, secondOperand, firstOperand);
+        firstOperand =result.toString();
+        currentOperator = null;
+        shouldResetDisplay = true;
+        updateDisplay();
+}
+
