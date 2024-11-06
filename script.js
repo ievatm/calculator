@@ -107,3 +107,26 @@ document.getElementById("equals").addEventListener("click", calculate);
 document.getElementById("clear").addEventListener("click", clearCalculator);
 document.getElementById("backspace").addEventListener("click", backspace);
 document.getElementById("decimal").addEventListener("click", appendDecimal);
+
+document.addEventListener("keydown", (event) => {
+    const key =event.key;
+
+    if (key === "Escape") {
+        clearCalculator();
+    }
+    else if (key === "Enter" || key === "=") {
+        calculate();
+    }
+    else if (["+", "-", "*", "/"].includes(key)) {
+        setOperator(key);
+    }
+    else if (key >= "0" && key <= "9") {
+        appendNumber(key);
+    }
+    else if (key === ".") {
+        appendDecimal();
+    }
+    else if (key === "backspace") {
+        backspace();
+    }
+});
