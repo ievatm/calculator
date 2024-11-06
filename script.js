@@ -130,3 +130,5 @@ document.addEventListener("keydown", (event) => {
         backspace();
     }
 });
+
+updateDisplay();
