@@ -52,3 +52,21 @@ function clearCalculator() {
     updateDisplay();
 }
 
+function appendNumber(number) {
+    if (shouldResetDisplay) {
+        firstOperand ="";
+        shouldResetDisplay = false;
+    }
+    if (firstOperand.length <12) {
+        firstOperand += number;
+        updateDisplay();
+    }
+}
+
+function setOperator(operator) {
+    if(currentOperator !== null)
+        calculate();
+    currentOperator = operator;
+    secondOperand =firstOperand;
+    firstOperand = "";
+}
