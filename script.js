@@ -89,8 +89,21 @@ function appendDecimal() {
         firstOperand ="0";
         shouldResetDisplay = false;
     }
-    if(!firstOperand.includes(".") {
+    if(!firstOperand.includes(".")) {
         firstOperand += ".";
         updateDisplay();
-    })
+    }
 }
+
+document.querySelectorAll(".digit").forEach(button =>
+    button.addEventListener("click", () => appendNumber(button.textContent))
+);
+
+document.querySelectorAll(".operator").forEach(button =>
+    button.addEventListener("click", () => setOperator(button.textContent))
+);
+
+document.getElementById("equals").addEventListener("click", calculate);
+document.getElementById("clear").addEventListener("click", clearCalculator);
+document.getElementById("backspace").addEventListener("click", backspace);
+document.getElementById("decimal").addEventListener("click", appendDecimal);
